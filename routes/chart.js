@@ -27,9 +27,9 @@ router.get('/hd-data', async (req, res) => {
       });
     }
 
-    // Calculate Human Design chart
+    // Calculate Human Design chart using Swiss Ephemeris
     const chartData = await HDKit.calculateChart({
-      birthTime: birthMoment.toDate(),
+      birthTime: date,
       timezone: timezone,
       latitude: 51.5074, // Default to London - in production, get from location service
       longitude: -0.1278
@@ -98,16 +98,16 @@ router.get('/hd-data-composite', async (req, res) => {
       });
     }
 
-    // Calculate individual charts
+    // Calculate individual charts using Swiss Ephemeris
     const chart1 = await HDKit.calculateChart({
-      birthTime: birthMoment1.toDate(),
+      birthTime: date,
       timezone: timezone,
       latitude: 51.5074,
       longitude: -0.1278
     });
 
     const chart2 = await HDKit.calculateChart({
-      birthTime: birthMoment2.toDate(),
+      birthTime: date1,
       timezone: timezone1,
       latitude: 40.7128,
       longitude: -74.0060

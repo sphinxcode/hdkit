@@ -10,8 +10,10 @@ const locationsRouter = require('./routes/locations');
 const chartRouter = require('./routes/chart');
 const healthRouter = require('./routes/health');
 
+console.log('Initializing astronomical calculations...');
+
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 // Security middleware
 app.use(helmet({
