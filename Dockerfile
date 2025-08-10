@@ -1,7 +1,7 @@
 FROM node:20-alpine
 
 # Install build dependencies for native modules (swisseph)
-RUN apk add --no-cache python3 make g++
+RUN apk add --no-cache python3 py3-setuptools make g++
 
 # Set working directory
 WORKDIR /app
